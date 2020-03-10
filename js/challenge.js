@@ -9,22 +9,46 @@ function pageSetup() {
     minus.addEventListener("click", decreaseCounter)
     plus.addEventListener("click", increaseCounter);
     heart.addEventListener("click", likeFunc);
-    pause.addEventListener("click", puaseFunc);
+    pause.addEventListener("click", pauseFunc);
 
-}   
+}
 
 function getMinus() {
-    document.getElementById('minus')
+   return document.getElementById('minus')
 }
 
 function getPlus() {
-    document.getElementById('plus')
+   return document.getElementById('plus')
 }
 
 function getHeart() {
-    document.getElementById('heart')
+   return document.getElementById('heart')
 }
 
 function getPause() {
-    document.getElementById('pause')
+   return document.getElementById('pause')
 }
+
+function getCounter() {
+    return document.getElementById('counter')
+}
+
+function decreaseCounter() {
+    count = getCounter();
+    count.innerText = (parseInt(count.innerText)- 1).toString()
+}
+
+function increaseCounter() {
+    count = getCounter();
+    count.innerText = (parseInt(count.innerText)+ 1).toString() ;
+}
+
+function likeFunc() {
+    console.log("like")
+}
+
+function pauseFunc() {
+    console.log("pause")
+}
+
+setInterval(increaseCounter,1000 )
